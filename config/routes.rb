@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "pins/new" => "pins#create"
   patch "pins/:id/edit" => "pins#update"
 
+  post "user/signup" => "devise/registrations#create"
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about" # creates about_path
