@@ -1,4 +1,10 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
+  
+  resources :pins
+
+  post "pins/new" => "pins#create"
+  patch "pins/:id/edit" => "pins#update"
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about" # creates about_path
