@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   post "user/signup" => "devise/registrations#create"
 
+  put "users/edit" => "devise/registrations#edit"
+  post "users/signup" => "devise/registrations#create"
+
   devise_for :users
   root "pins#index"
   get "about" => "pages#about" # creates about_path
